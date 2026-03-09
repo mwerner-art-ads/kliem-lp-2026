@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hundefutter Vital | Kostenlose Futterberatung von Duangjan Kliem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --alge: #3A3D0C;
+            --kalk: #EAE2D5;
+            --chlorophyll: #E7F191;
+            --chlorophyll-hell: #EEF5B2;
+            --kristall-rot: #FF9888;
+            --weiss: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--weiss);
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: var(--alge);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-logo-text {
+            color: var(--kalk);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--kalk);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--chlorophyll);
+        }
+
+        .nav-cta {
+            background-color: var(--kristall-rot);
+            color: var(--alge);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 136, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--kalk);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--alge) 0%, #4a4d1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23E7F191" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            color: var(--kalk);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--chlorophyll);
+        }
+
+        .hero-content p {
+            color: var(--kalk);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--kristall-rot);
+            color: var(--alge);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 152, 136, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background-color: var(--chlorophyll);
+            padding: 3rem 2rem;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 1rem;
+        }
+
+        .trust-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--alge);
+            line-height: 1;
+        }
+
+        .trust-label {
+            color: var(--alge);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        /* Problem/Solution Section */
+        .problem-section {
+            background-color: var(--kalk);
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--alge);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background-color: var(--weiss);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .problem-card.highlight {
+            background-color: var(--chlorophyll-hell);
+            border: 2px solid var(--chlorophyll);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--chlorophyll);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .problem-card h3 {
+            color: var(--alge);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--weiss);
+            padding: 5rem 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: var(--kalk);
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--chlorophyll);
+            font-family: Georgia, serif;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        .testimonial-text {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--chlorophyll);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--alge);
+        }
+
+        .testimonial-info h4 {
+            color: var(--alge);
+            font-weight: 600;
+        }
+
+        .testimonial-info span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-stars {
+            color: #FFB800;
+            margin-top: 0.25rem;
+        }
+
+        /* How it Works Section */
+        .how-it-works {
+            background-color: var(--weiss);
+            padding: 5rem 2rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--kristall-rot);
+            color: var(--alge);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-card h3 {
+            color: var(--alge);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card p {
+            color: var(--text-light);
+        }
+
+        /* Beratung Section */
+        .beratung {
+            background: linear-gradient(135deg, var(--alge) 0%, #4a4d1a 100%);
+            padding: 5rem 2rem;
+        }
+
+        .beratung-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .beratung-image {
+            position: relative;
+        }
+
+        .beratung-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .beratung-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-color: var(--chlorophyll);
+            color: var(--alge);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(231, 241, 145, 0.5);
+        }
+
+        .beratung-content h2 {
+            color: var(--kalk);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .beratung-content h2 span {
+            color: var(--chlorophyll);
+        }
+
+        .beratung-content p {
+            color: var(--kalk);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .beratung-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .beratung-list li {
+            color: var(--kalk);
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .beratung-list li::before {
+            content: '✓';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            background-color: var(--chlorophyll);
+            color: var(--alge);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Form Section */
+        .contact {
+            background-color: var(--kalk);
+            padding: 5rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background-color: var(--weiss);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--alge);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--kalk);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--chlorophyll);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background-color: var(--kristall-rot);
+            color: var(--alge);
+            padding: 1.25rem;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 152, 136, 0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: var(--chlorophyll-hell);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: var(--alge);
+        }
+
+        .guarantee-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--chlorophyll);
+            color: var(--alge);
+            border-radius: 50%;
+            font-weight: 700;
+        }
+
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background-color: var(--weiss);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .sticky-cta a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--kristall-rot);
+            color: var(--alge);
+            padding: 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--weiss);
+            padding: 5rem 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--kalk);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--alge);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--chlorophyll-hell);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--alge);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .faq-answer-content strong {
+            color: var(--alge);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--alge);
+            padding: 3rem 2rem;
+            color: var(--kalk);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--chlorophyll);
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            color: var(--chlorophyll);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--kalk);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(234, 226, 213, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .partner-signet {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .partner-signet span {
+            background-color: var(--chlorophyll);
+            color: var(--alge);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .beratung-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .beratung-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .beratung-list {
+                max-width: 320px;
+                margin: 2rem auto;
+            }
+
+            .beratung-list li {
+                justify-content: flex-start;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-logo img {
+                height: 24px !important;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: none;
+            }
+
+            .sticky-cta {
+                display: none !important;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem;
+                line-height: 1.3;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .trust-number {
+                font-size: 1.75rem;
+            }
+
+            .trust-label {
+                font-size: 0.75rem;
+            }
+
+            .beratung-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/reico-logo-light.svg" alt="REiCO" style="height: 28px; width: auto;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#probleme">Probleme</a></li>
+                <li><a href="#erfahrungen">Erfahrungen</a></li>
+                <li><a href="#beratung">Meine Beratung</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <a href="#kontakt" class="nav-cta">Kostenlose Beratung</a>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Dein Hund hat <span>Verdauungsprobleme?</span> Das muss nicht sein.</h1>
+                <p>In einer kostenlosen Futterberatung analysiere ich die Ernährung deines Hundes und zeige dir, wie natürliches Futter Verdauung, Fell und Vitalität verbessern kann.</p>
+                <a href="#kontakt" class="hero-cta">Jetzt kostenlos beraten lassen</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" alt="Glücklicher gesunder Hund" style="object-fit: cover; aspect-ratio: 4/3;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-number">90%</div>
+                <div class="trust-label">weniger Verdauungsprobleme</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">500+</div>
+                <div class="trust-label">zufriedene Hundebesitzer</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">15+</div>
+                <div class="trust-label">Jahre Erfahrung</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">100%</div>
+                <div class="trust-label">natürliche Zutaten</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="probleme" class="problem-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Kommt dir das bekannt vor?</h2>
+                <p>Diese Probleme höre ich täglich von Hundebesitzern</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🐕</div>
+                    <h3>Verdauungsprobleme</h3>
+                    <p>Durchfall, Blähungen oder ständiges Gras fressen – ein Zeichen, dass die Verdauung aus dem Gleichgewicht ist.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🦴</div>
+                    <h3>Allergien & Unverträglichkeiten</h3>
+                    <p>Juckreiz, Hautprobleme oder ständiges Kratzen können auf Futterunverträglichkeiten hindeuten.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">✨</div>
+                    <h3>Stumpfes Fell</h3>
+                    <p>Ein glanzloses, struppiges Fell ist oft ein Zeichen für fehlende Nährstoffe in der täglichen Ernährung.</p>
+                </div>
+                <div class="problem-card highlight">
+                    <div class="problem-icon">💚</div>
+                    <h3>Die Lösung: Natürliches Futter</h3>
+                    <p>Mit der richtigen Ernährung verschwinden diese Probleme oft innerhalb weniger Wochen. Ich zeige dir, wie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="erfahrungen" class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Das sagen andere Hundebesitzer</h2>
+                <p>Echte Erfahrungen von zufriedenen Kunden</p>
+            </div>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Nach nur 3 Wochen mit dem neuen Futter hat sich die Verdauung meines Labrador komplett normalisiert. Kein Durchfall mehr!</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SK</div>
+                    <div class="testimonial-info">
+                        <h4>Sandra K.</h4>
+                        <span>Labrador Besitzerin, München</span>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Die Beratung von Duangjan war super hilfreich. Endlich verstehe ich, worauf es bei der Hundeernährung wirklich ankommt.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">TM</div>
+                    <div class="testimonial-info">
+                        <h4>Thomas M.</h4>
+                        <span>Golden Retriever, Hamburg</span>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Mein Hund hatte jahrelang Hautprobleme. Seit der Futterumstellung ist das Fell wieder glänzend und er kratzt sich kaum noch.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LH</div>
+                    <div class="testimonial-info">
+                        <h4>Lisa H.</h4>
+                        <span>Französische Bulldogge, Berlin</span>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- So funktioniert's Section -->
+    <section class="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>So einfach geht's</h2>
+                <p>In 3 Schritten zum gesünderen Hundefutter</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Kostenlose Beratung</h3>
+                    <p>Fülle das kurze Formular aus. Ich melde mich innerhalb von 24 Stunden für ein unverbindliches Gespräch.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Individueller Futterplan</h3>
+                    <p>Basierend auf Rasse, Alter und Beschwerden deines Hundes erstelle ich eine persönliche Futterempfehlung.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Lieferung & Betreuung</h3>
+                    <p>Du erhältst kostenlose Proben zum Testen. Bei Fragen bin ich auch nach dem Kauf für dich da.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#kontakt" class="hero-cta">Jetzt kostenlos starten</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beratung Section -->
+    <section id="beratung" class="beratung">
+        <div class="beratung-container">
+            <div class="beratung-image">
+                <img src="assets/REICO-Hundefutter-Vital-duangjan.kliem.jpg" alt="Duangjan Kliem - REiCO Beraterin" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); object-fit: cover;">
+                <div class="beratung-badge">REiCO Vertriebspartner</div>
+            </div>
+            <div class="beratung-content">
+                <h2>Meine <span>kostenlose Beratung</span> für dich</h2>
+                <p>Ich bin Duangjan Kliem, zertifizierte REiCO Vertriebspartnerin mit langjähriger Erfahrung in der Hundeernährung. Gemeinsam finden wir das perfekte Futter für deinen Vierbeiner.</p>
+                <ul class="beratung-list">
+                    <li>Individuelle Analyse der aktuellen Ernährung</li>
+                    <li>Persönliche Futterempfehlung für deinen Hund</li>
+                    <li>Tipps zur sanften Futterumstellung</li>
+                    <li>Kostenlose Proben zum Testen</li>
+                    <li>Langfristige Betreuung bei Fragen</li>
+                </ul>
+                <a href="#kontakt" class="hero-cta">Jetzt Beratung anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="kontakt" class="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>Kostenlose Beratung anfragen</h2>
+                <p>Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir.</p>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Dein Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Wie heißt du?">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail Adresse *</label>
+                    <input type="email" id="email" name="email" required placeholder="deine@email.de">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefonnummer *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Für den Rückruf">
+                </div>
+                <button type="submit" class="form-submit">Meine kostenlose Beratung starten</button>
+                <p class="form-note">Dauert nur 2 Minuten · 100% kostenlos · Kein Kaufzwang</p>
+                <div class="guarantee-badge">
+                    <span class="guarantee-icon">✓</span>
+                    <span>Nicht zufrieden? Kostenlose Proben ohne Risiko testen.</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Häufige Fragen</h2>
+                <p>Antworten auf die wichtigsten Fragen zur Futterberatung</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Ist die Beratung wirklich kostenlos?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Ja, absolut kostenlos und unverbindlich.</strong> Ich nehme mir Zeit, um die Ernährung deines Hundes zu analysieren und dir eine ehrliche Empfehlung zu geben. Du entscheidest danach selbst, ob du etwas ändern möchtest.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Wie läuft die Futterberatung ab?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Nach deiner Anfrage melde ich mich innerhalb von 24 Stunden bei dir. Wir besprechen telefonisch oder per Video die aktuelle Ernährung deines Hundes, eventuelle Probleme und deine Wünsche. Danach erstelle ich eine <strong>individuelle Futterempfehlung</strong> – kostenlos und ohne Kaufzwang.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Was macht REiCO Futter besonders?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        REiCO steht für <strong>100% natürliche Zutaten</strong> ohne künstliche Zusätze, Konservierungsstoffe oder Lockstoffe. Das Futter wird in Deutschland hergestellt und enthält einen hohen Fleischanteil. Viele Hundebesitzer berichten, dass sich Verdauungsprobleme, Allergien und Fellprobleme innerhalb weniger Wochen verbessern.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Kann ich das Futter erst testen?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <strong>Ja, ich schicke dir gerne kostenlose Proben zum Testen.</strong> So kannst du sehen, wie dein Hund das Futter annimmt, bevor du dich für eine größere Bestellung entscheidest. Das Risiko liegt bei mir, nicht bei dir.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Wie lange dauert es, bis ich Verbesserungen sehe?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Die meisten Hundebesitzer berichten von ersten Verbesserungen nach <strong>2-4 Wochen</strong>. Verdauungsprobleme normalisieren sich oft am schnellsten. Für Fellverbesserungen oder bei Allergien kann es 6-8 Wochen dauern, da der Körper Zeit braucht, um sich zu regenerieren.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Was kostet das Futter?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Die Kosten hängen von der Größe und dem Aktivitätslevel deines Hundes ab. In der Beratung rechne ich dir genau aus, was das Futter pro Tag kostet. <strong>Oft ist der Unterschied zu Supermarkt-Futter geringer als gedacht</strong> – und du sparst langfristig bei Tierarztkosten.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Muss ich das Futter direkt bei dir kaufen?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        REiCO wird <strong>nicht im Handel verkauft</strong>, sondern direkt über zertifizierte Vertriebspartner wie mich. Das hat den Vorteil, dass du immer einen persönlichen Ansprechpartner hast und individuelle Beratung bekommst – auch nach dem Kauf.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Hundefutter Vital</h3>
+                <p>Natürliche Hundeernährung mit REiCO Premium-Futter. Persönliche Beratung für deinen Vierbeiner.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#probleme">Häufige Probleme</a></li>
+                    <li><a href="#erfahrungen">Erfahrungen</a></li>
+                    <li><a href="#beratung">Meine Beratung</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Produkte</h4>
+                <ul>
+                    <li><a href="#">Nassfutter</a></li>
+                    <li><a href="#">Trockenfutter</a></li>
+                    <li><a href="#">Welpenfutter</a></li>
+                    <li><a href="#">Ergänzungen</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Rechtliches</h4>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">AGB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hundefutter Vital | Duangjan Kliem</p>
+            <div class="partner-signet">
+                Offizieller <span>REiCO Partner</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <a href="#kontakt">Kostenlose Beratung starten</a>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
