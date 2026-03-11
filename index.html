@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hundefutter Vital | Kostenlose Futterberatung von Duangjan Kliem</title>
+    <title>Hundefutter Vital | Kostenfreie Futterberatung von Duangjan Kliem</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -161,11 +161,26 @@
             color: var(--chlorophyll);
         }
 
-        .hero-content p {
+        .hero-content .hero-text {
             color: var(--kalk);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-content .hero-text p {
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .hero-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA with Subtext */
+        .cta-wrapper {
+            display: inline-block;
+            text-align: center;
         }
 
         .hero-cta {
@@ -183,6 +198,19 @@
         .hero-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 152, 136, 0.4);
+        }
+
+        .cta-subtext {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--kalk);
+            opacity: 0.8;
+        }
+
+        .cta-subtext-dark {
+            color: var(--text-light);
         }
 
         .hero-image {
@@ -380,6 +408,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            align-items: stretch;
         }
 
         .step-card {
@@ -403,7 +432,7 @@
 
         .step-card h3 {
             color: var(--alge);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.75rem;
         }
 
@@ -568,9 +597,10 @@
 
         .form-note {
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-style: italic;
         }
 
         .guarantee-badge {
@@ -917,13 +947,13 @@
                 <img src="assets/reico-logo-light.svg" alt="REiCO" style="height: 28px; width: auto;">
             </div>
             <ul class="nav-links">
-                <li><a href="#probleme">Probleme</a></li>
+                <li><a href="#beschwerden">Häufige Beschwerden</a></li>
                 <li><a href="#erfahrungen">Erfahrungen</a></li>
-                <li><a href="#beratung">Meine Beratung</a></li>
+                <li><a href="#beratung">Unsere Unterstützung</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
-            <a href="#kontakt" class="nav-cta">Kostenlose Beratung</a>
+            <a href="#kontakt" class="nav-cta">Unverbindliche Beratung</a>
             <button class="mobile-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -936,9 +966,15 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Dein Hund hat <span>Verdauungsprobleme?</span> Das muss nicht sein.</h1>
-                <p>In einer kostenlosen Futterberatung analysiere ich die Ernährung deines Hundes und zeige dir, wie natürliches Futter Verdauung, Fell und Vitalität verbessern kann.</p>
-                <a href="#kontakt" class="hero-cta">Jetzt kostenlos beraten lassen</a>
+                <h1>Dein Hund hat <span>gesundheitliche Probleme?</span> Das muss nicht sein.</h1>
+                <div class="hero-text">
+                    <p>Finde jetzt heraus, welches Hundefutter optimal zu deinem Hund passt – statt immer wieder Neues auszuprobieren.</p>
+                    <p>Gemeinsam analysieren wir in einer kostenfreien Futterberatung die aktuelle Ernährung deines Hundes. Du erfährst, welche bedarfsdeckende Fütterung wirklich zu ihm passt und wie wir seine Gesundheit und Vitalität unterstützen können.</p>
+                </div>
+                <div class="cta-wrapper">
+                    <a href="#kontakt" class="hero-cta">Unverbindliche Futterberatung starten</a>
+                    <span class="cta-subtext">Dauert nur 2 Minuten</span>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" alt="Glücklicher gesunder Hund" style="object-fit: cover; aspect-ratio: 4/3;">
@@ -951,7 +987,7 @@
         <div class="trust-container">
             <div class="trust-item">
                 <div class="trust-number">90%</div>
-                <div class="trust-label">weniger Verdauungsprobleme</div>
+                <div class="trust-label">weniger Magen-Darm-Beschwerden</div>
             </div>
             <div class="trust-item">
                 <div class="trust-number">500+</div>
@@ -969,16 +1005,16 @@
     </section>
 
     <!-- Problem Section -->
-    <section id="probleme" class="problem-section">
+    <section id="beschwerden" class="problem-section">
         <div class="section-container">
             <div class="section-header">
                 <h2>Kommt dir das bekannt vor?</h2>
-                <p>Diese Probleme höre ich täglich von Hundebesitzern</p>
+                <p>Diese Beschwerden höre ich täglich von Hundebesitzern</p>
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
                     <div class="problem-icon">🐕</div>
-                    <h3>Verdauungsprobleme</h3>
+                    <h3>Magen-Darm-Beschwerden</h3>
                     <p>Durchfall, Blähungen oder ständiges Gras fressen – ein Zeichen, dass die Verdauung aus dem Gleichgewicht ist.</p>
                 </div>
                 <div class="problem-card">
@@ -994,7 +1030,7 @@
                 <div class="problem-card highlight">
                     <div class="problem-icon">💚</div>
                     <h3>Die Lösung: Natürliches Futter</h3>
-                    <p>Mit der richtigen Ernährung verschwinden diese Probleme oft innerhalb weniger Wochen. Ich zeige dir, wie.</p>
+                    <p>Mit der richtigen Ernährung verschwinden diese Beschwerden oft innerhalb weniger Wochen. Ich zeige dir, wie.</p>
                 </div>
             </div>
         </div>
@@ -1050,12 +1086,12 @@
         <div class="section-container">
             <div class="section-header">
                 <h2>So einfach geht's</h2>
-                <p>In 3 Schritten zum gesünderen Hundefutter</p>
+                <p>In 3 Schritten zum gesünderen & vitaleren Hund</p>
             </div>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Kostenlose Beratung</h3>
+                    <h3>Kostenfreie Futteranalyse</h3>
                     <p>Fülle das kurze Formular aus. Ich melde mich innerhalb von 24 Stunden für ein unverbindliches Gespräch.</p>
                 </div>
                 <div class="step-card">
@@ -1065,12 +1101,15 @@
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Lieferung & Betreuung</h3>
-                    <p>Du erhältst kostenlose Proben zum Testen. Bei Fragen bin ich auch nach dem Kauf für dich da.</p>
+                    <h3>Lieferung & Begleitung</h3>
+                    <p>Du erhältst kostenfreie Proben zum Testen. Bei Fragen bin ich ein ganzes Hundeleben lang für dich da.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="#kontakt" class="hero-cta">Jetzt kostenlos starten</a>
+                <div class="cta-wrapper">
+                    <a href="#kontakt" class="hero-cta">Jetzt die Ernährung meines Hundes prüfen</a>
+                    <span class="cta-subtext cta-subtext-dark">Kostenfrei & Unverbindlich</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1079,20 +1118,21 @@
     <section id="beratung" class="beratung">
         <div class="beratung-container">
             <div class="beratung-image">
-                <img src="assets/REICO-Hundefutter-Vital-duangjan.kliem.jpg" alt="Duangjan Kliem - REiCO Beraterin" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); object-fit: cover;">
+                <!-- v3: Neues Foto von Matthias -->
+                <img src="assets/duangjan-kliem.jpg" alt="Duangjan Kliem - REiCO Beraterin" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); object-fit: cover;">
                 <div class="beratung-badge">REiCO Vertriebspartner</div>
             </div>
             <div class="beratung-content">
-                <h2>Meine <span>kostenlose Beratung</span> für dich</h2>
-                <p>Ich bin Duangjan Kliem, zertifizierte REiCO Vertriebspartnerin mit langjähriger Erfahrung in der Hundeernährung. Gemeinsam finden wir das perfekte Futter für deinen Vierbeiner.</p>
+                <h2>Unsere <span>kostenfreie Futteranalyse</span> für deinen Hund</h2>
+                <p>Wir sind ein Team aus zertifizierten REiCO Vertriebspartnern mit langjähriger Erfahrung in der Hundeernährung. Gemeinsam finden wir das perfekte Futter für deinen Vierbeiner.</p>
                 <ul class="beratung-list">
                     <li>Individuelle Analyse der aktuellen Ernährung</li>
                     <li>Persönliche Futterempfehlung für deinen Hund</li>
                     <li>Tipps zur sanften Futterumstellung</li>
-                    <li>Kostenlose Proben zum Testen</li>
-                    <li>Langfristige Betreuung bei Fragen</li>
+                    <li>Kostenfreie Proben zum Testen</li>
+                    <li>Ein ganzes Hundeleben lang für dich da</li>
                 </ul>
-                <a href="#kontakt" class="hero-cta">Jetzt Beratung anfragen</a>
+                <a href="#kontakt" class="hero-cta">Jetzt Futteranalyse anfragen</a>
             </div>
         </div>
     </section>
@@ -1101,7 +1141,7 @@
     <section id="kontakt" class="contact">
         <div class="contact-container">
             <div class="section-header">
-                <h2>Kostenlose Beratung anfragen</h2>
+                <h2>Kostenfreie Futteranalyse anfragen</h2>
                 <p>Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir.</p>
             </div>
             <form class="contact-form" action="#" method="post">
@@ -1117,11 +1157,11 @@
                     <label for="phone">Telefonnummer *</label>
                     <input type="tel" id="phone" name="phone" required placeholder="Für den Rückruf">
                 </div>
-                <button type="submit" class="form-submit">Meine kostenlose Beratung starten</button>
-                <p class="form-note">Dauert nur 2 Minuten · 100% kostenlos · Kein Kaufzwang</p>
+                <button type="submit" class="form-submit">Unverbindliche Futterberatung starten</button>
+                <p class="form-note">Dauert nur 2 Minuten · Kostenfrei & Unverbindlich · Kein Kaufzwang</p>
                 <div class="guarantee-badge">
                     <span class="guarantee-icon">✓</span>
-                    <span>Nicht zufrieden? Kostenlose Proben ohne Risiko testen.</span>
+                    <span>Nicht zufrieden? Kostenfreie Proben ohne Risiko testen.</span>
                 </div>
             </form>
         </div>
@@ -1136,10 +1176,10 @@
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Ist die Beratung wirklich kostenlos?</button>
+                <button class="faq-question">Ist die Beratung wirklich kostenfrei?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        <strong>Ja, absolut kostenlos und unverbindlich.</strong> Ich nehme mir Zeit, um die Ernährung deines Hundes zu analysieren und dir eine ehrliche Empfehlung zu geben. Du entscheidest danach selbst, ob du etwas ändern möchtest.
+                        <strong>Ja, absolut kostenfrei und unverbindlich.</strong> Ich nehme mir Zeit, um die Ernährung deines Hundes zu analysieren und dir eine ehrliche Empfehlung zu geben. Du entscheidest danach selbst, ob du etwas ändern möchtest.
                     </div>
                 </div>
             </div>
@@ -1148,7 +1188,7 @@
                 <button class="faq-question">Wie läuft die Futterberatung ab?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Nach deiner Anfrage melde ich mich innerhalb von 24 Stunden bei dir. Wir besprechen telefonisch oder per Video die aktuelle Ernährung deines Hundes, eventuelle Probleme und deine Wünsche. Danach erstelle ich eine <strong>individuelle Futterempfehlung</strong> – kostenlos und ohne Kaufzwang.
+                        Nach deiner Anfrage melde ich mich innerhalb von 24 Stunden bei dir. Wir besprechen telefonisch oder per Video die aktuelle Ernährung deines Hundes, eventuelle Beschwerden und deine Wünsche. Danach erstelle ich eine <strong>individuelle Futterempfehlung</strong> – kostenfrei und ohne Kaufzwang.
                     </div>
                 </div>
             </div>
@@ -1157,7 +1197,7 @@
                 <button class="faq-question">Was macht REiCO Futter besonders?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        REiCO steht für <strong>100% natürliche Zutaten</strong> ohne künstliche Zusätze, Konservierungsstoffe oder Lockstoffe. Das Futter wird in Deutschland hergestellt und enthält einen hohen Fleischanteil. Viele Hundebesitzer berichten, dass sich Verdauungsprobleme, Allergien und Fellprobleme innerhalb weniger Wochen verbessern.
+                        REiCO steht für <strong>100% natürliche Zutaten</strong> ohne künstliche Zusätze, Konservierungsstoffe oder Lockstoffe. Das Futter wird in Deutschland hergestellt und enthält einen hohen Fleischanteil. Viele Hundebesitzer berichten, dass sich Magen-Darm-Beschwerden, Allergien und Fellprobleme innerhalb weniger Wochen verbessern.
                     </div>
                 </div>
             </div>
@@ -1166,7 +1206,7 @@
                 <button class="faq-question">Kann ich das Futter erst testen?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        <strong>Ja, ich schicke dir gerne kostenlose Proben zum Testen.</strong> So kannst du sehen, wie dein Hund das Futter annimmt, bevor du dich für eine größere Bestellung entscheidest. Das Risiko liegt bei mir, nicht bei dir.
+                        <strong>Ja, ich schicke dir gerne kostenfreie Proben zum Testen.</strong> So kannst du sehen, wie dein Hund das Futter annimmt, bevor du dich für eine größere Bestellung entscheidest. Das Risiko liegt bei mir, nicht bei dir.
                     </div>
                 </div>
             </div>
@@ -1175,7 +1215,7 @@
                 <button class="faq-question">Wie lange dauert es, bis ich Verbesserungen sehe?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Die meisten Hundebesitzer berichten von ersten Verbesserungen nach <strong>2-4 Wochen</strong>. Verdauungsprobleme normalisieren sich oft am schnellsten. Für Fellverbesserungen oder bei Allergien kann es 6-8 Wochen dauern, da der Körper Zeit braucht, um sich zu regenerieren.
+                        Die meisten Hundebesitzer berichten von ersten Verbesserungen nach <strong>2-4 Wochen</strong>. Magen-Darm-Beschwerden normalisieren sich oft am schnellsten. Für Fellverbesserungen oder bei Allergien kann es 6-8 Wochen dauern, da der Körper Zeit braucht, um sich zu regenerieren.
                     </div>
                 </div>
             </div>
@@ -1190,10 +1230,10 @@
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Muss ich das Futter direkt bei dir kaufen?</button>
+                <button class="faq-question">Muss ich das Futter direkt bei euch kaufen?</button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        REiCO wird <strong>nicht im Handel verkauft</strong>, sondern direkt über zertifizierte Vertriebspartner wie mich. Das hat den Vorteil, dass du immer einen persönlichen Ansprechpartner hast und individuelle Beratung bekommst – auch nach dem Kauf.
+                        REiCO wird <strong>nicht im Handel verkauft</strong>, sondern direkt über zertifizierte Vertriebspartner wie uns. Das hat den Vorteil, dass du immer einen persönlichen Ansprechpartner hast und individuelle Beratung bekommst – ein ganzes Hundeleben lang.
                     </div>
                 </div>
             </div>
@@ -1210,9 +1250,9 @@
             <div class="footer-links">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="#probleme">Häufige Probleme</a></li>
+                    <li><a href="#beschwerden">Häufige Beschwerden</a></li>
                     <li><a href="#erfahrungen">Erfahrungen</a></li>
-                    <li><a href="#beratung">Meine Beratung</a></li>
+                    <li><a href="#beratung">Unsere Unterstützung</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
@@ -1245,7 +1285,7 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <a href="#kontakt">Kostenlose Beratung starten</a>
+        <a href="#kontakt">Unverbindliche Futterberatung starten</a>
     </div>
 
     <script>
