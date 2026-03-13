@@ -177,12 +177,7 @@
             margin-bottom: 0;
         }
 
-        /* CTA with Subtext */
-        .cta-wrapper {
-            display: inline-block;
-            text-align: center;
-        }
-
+        /* CTA Button */
         .hero-cta {
             display: inline-block;
             background-color: var(--kristall-rot);
@@ -198,19 +193,6 @@
         .hero-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 152, 136, 0.4);
-        }
-
-        .cta-subtext {
-            display: block;
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
-            font-style: italic;
-            color: var(--kalk);
-            opacity: 0.8;
-        }
-
-        .cta-subtext-dark {
-            color: var(--text-light);
         }
 
         .hero-image {
@@ -284,7 +266,7 @@
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -301,15 +283,20 @@
         }
 
         .problem-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background-color: var(--chlorophyll);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+        }
+
+        .problem-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--alge);
         }
 
         .problem-card h3 {
@@ -508,7 +495,7 @@
         }
 
         .beratung-list li::before {
-            content: '✓';
+            content: '\2713';
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -595,37 +582,21 @@
             box-shadow: 0 6px 20px rgba(255, 152, 136, 0.4);
         }
 
-        .form-note {
+        .calendly-link {
+            display: block;
             text-align: center;
-            margin-top: 0.75rem;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            font-style: italic;
-        }
-
-        .guarantee-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
             margin-top: 1.5rem;
             padding: 1rem;
             background-color: var(--chlorophyll-hell);
             border-radius: 10px;
-            font-size: 0.9rem;
             color: var(--alge);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
 
-        .guarantee-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
+        .calendly-link:hover {
             background-color: var(--chlorophyll);
-            color: var(--alge);
-            border-radius: 50%;
-            font-weight: 700;
         }
 
         /* Sticky Mobile CTA */
@@ -663,6 +634,10 @@
             }
 
             .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -949,11 +924,11 @@
             <ul class="nav-links">
                 <li><a href="#beschwerden">Häufige Beschwerden</a></li>
                 <li><a href="#erfahrungen">Erfahrungen</a></li>
-                <li><a href="#beratung">Unsere Unterstützung</a></li>
+                <li><a href="#beratung">Meine Unterstützung</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
-            <a href="#kontakt" class="nav-cta">Unverbindliche Beratung</a>
+            <a href="#kontakt" class="nav-cta">Kostenloser Futtercheck</a>
             <button class="mobile-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -966,15 +941,11 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Dein Hund hat <span>gesundheitliche Probleme?</span> Das muss nicht sein.</h1>
+                <h1><span>Gesunder & Vitaler Hund</span> - ein ganzes Hundeleben lang.</h1>
                 <div class="hero-text">
-                    <p>Finde jetzt heraus, welches Hundefutter optimal zu deinem Hund passt – statt immer wieder Neues auszuprobieren.</p>
-                    <p>Gemeinsam analysieren wir in einer kostenfreien Futterberatung die aktuelle Ernährung deines Hundes. Du erfährst, welche bedarfsdeckende Fütterung wirklich zu ihm passt und wie wir seine Gesundheit und Vitalität unterstützen können.</p>
+                    <p>Finde in einer kostenfreien Futterberatung heraus, welches Futter zu deinem Hund passt.</p>
                 </div>
-                <div class="cta-wrapper">
-                    <a href="#kontakt" class="hero-cta">Unverbindliche Futterberatung starten</a>
-                    <span class="cta-subtext">Dauert nur 2 Minuten</span>
-                </div>
+                <a href="#kontakt" class="hero-cta">Kostenlose Futterberatung</a>
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" alt="Glücklicher gesunder Hund" style="object-fit: cover; aspect-ratio: 4/3;">
@@ -1013,22 +984,26 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <div class="problem-icon">🐕</div>
+                    <div class="problem-icon">
+                        <!-- Magen/Verdauung Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    </div>
                     <h3>Magen-Darm-Beschwerden</h3>
                     <p>Durchfall, Blähungen oder ständiges Gras fressen – ein Zeichen, dass die Verdauung aus dem Gleichgewicht ist.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">🦴</div>
-                    <h3>Allergien & Unverträglichkeiten</h3>
-                    <p>Juckreiz, Hautprobleme oder ständiges Kratzen können auf Futterunverträglichkeiten hindeuten.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">✨</div>
-                    <h3>Stumpfes Fell</h3>
-                    <p>Ein glanzloses, struppiges Fell ist oft ein Zeichen für fehlende Nährstoffe in der täglichen Ernährung.</p>
+                    <div class="problem-icon">
+                        <!-- Fell/Kratzen Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.5 11c1.38 0 2.5-1.12 2.5-2.5S5.88 6 4.5 6 2 7.12 2 8.5 3.12 11 4.5 11zm0-3c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 6c1.38 0 2.5-1.12 2.5-2.5S8.88 9 7.5 9 5 10.12 5 11.5 6.12 14 7.5 14zm0-3c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm5 3c1.38 0 2.5-1.12 2.5-2.5S13.88 9 12.5 9 10 10.12 10 11.5s1.12 2.5 2.5 2.5zm0-3c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm4.5 1c1.38 0 2.5-1.12 2.5-2.5S18.88 7 17.5 7 15 8.12 15 9.5s1.12 2.5 2.5 2.5zm0-3c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm2.5 8.5c0 1.38-1.12 2.5-2.5 2.5s-2.5-1.12-2.5-2.5c0-.67.27-1.27.7-1.72-.26-.27-.45-.59-.54-.94-.14.06-.3.09-.46.09-.83 0-1.5-.67-1.5-1.5 0-.66.43-1.22 1.02-1.42-.06-.19-.1-.38-.1-.58 0-1.1.9-2 2-2 .74 0 1.38.41 1.73 1.01.24-.06.49-.09.75-.09 1.1 0 2 .9 2 2 0 .65-.32 1.23-.81 1.59.51.45.81 1.09.81 1.81 0 .67-.27 1.27-.7 1.72.43.45.7 1.05.7 1.72z"/></svg>
+                    </div>
+                    <h3>Juckreiz oder stumpfes Fell</h3>
+                    <p>Hautprobleme, ständiges Kratzen oder ein glanzloses Fell sind oft Zeichen für fehlende Nährstoffe oder Futterunverträglichkeiten.</p>
                 </div>
                 <div class="problem-card highlight">
-                    <div class="problem-icon">💚</div>
+                    <div class="problem-icon">
+                        <!-- Lösung/Herz Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
                     <h3>Die Lösung: Natürliches Futter</h3>
                     <p>Mit der richtigen Ernährung verschwinden diese Beschwerden oft innerhalb weniger Wochen. Ich zeige dir, wie.</p>
                 </div>
@@ -1052,7 +1027,7 @@
                     <div class="testimonial-info">
                         <h4>Sandra K.</h4>
                         <span>Labrador Besitzerin, München</span>
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-stars">*****</div>
                     </div>
                 </div>
             </div>
@@ -1063,7 +1038,7 @@
                     <div class="testimonial-info">
                         <h4>Thomas M.</h4>
                         <span>Golden Retriever, Hamburg</span>
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-stars">*****</div>
                     </div>
                 </div>
             </div>
@@ -1074,7 +1049,7 @@
                     <div class="testimonial-info">
                         <h4>Lisa H.</h4>
                         <span>Französische Bulldogge, Berlin</span>
-                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-stars">*****</div>
                     </div>
                 </div>
             </div>
@@ -1106,10 +1081,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <div class="cta-wrapper">
-                    <a href="#kontakt" class="hero-cta">Jetzt die Ernährung meines Hundes prüfen</a>
-                    <span class="cta-subtext cta-subtext-dark">Kostenfrei & Unverbindlich</span>
-                </div>
+                <a href="#kontakt" class="hero-cta">Kostenlose Futterberatung</a>
             </div>
         </div>
     </section>
@@ -1118,13 +1090,12 @@
     <section id="beratung" class="beratung">
         <div class="beratung-container">
             <div class="beratung-image">
-                <!-- v3: Neues Foto von Matthias -->
-                <img src="assets/duangjan-kliem.jpg" alt="Duangjan Kliem - REiCO Beraterin" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); object-fit: cover;">
+                <img src="feedback/Portraits2551-Bearbeitet.jpg" alt="Duangjan Kliem - REiCO Beraterin" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); object-fit: cover;">
                 <div class="beratung-badge">REiCO Vertriebspartner</div>
             </div>
             <div class="beratung-content">
-                <h2>Unsere <span>kostenfreie Futteranalyse</span> für deinen Hund</h2>
-                <p>Wir sind ein Team aus zertifizierten REiCO Vertriebspartnern mit langjähriger Erfahrung in der Hundeernährung. Gemeinsam finden wir das perfekte Futter für deinen Vierbeiner.</p>
+                <h2>Meine <span>kostenfreie Futteranalyse</span> für deinen Hund</h2>
+                <p>Als zertifizierte REiCO Vertriebspartnerin mit langjähriger Erfahrung in der Hundeernährung finde ich das perfekte Futter für deinen Vierbeiner.</p>
                 <ul class="beratung-list">
                     <li>Individuelle Analyse der aktuellen Ernährung</li>
                     <li>Persönliche Futterempfehlung für deinen Hund</li>
@@ -1132,7 +1103,7 @@
                     <li>Kostenfreie Proben zum Testen</li>
                     <li>Ein ganzes Hundeleben lang für dich da</li>
                 </ul>
-                <a href="#kontakt" class="hero-cta">Jetzt Futteranalyse anfragen</a>
+                <a href="#kontakt" class="hero-cta">Kostenloser Futtercheck</a>
             </div>
         </div>
     </section>
@@ -1141,8 +1112,7 @@
     <section id="kontakt" class="contact">
         <div class="contact-container">
             <div class="section-header">
-                <h2>Kostenfreie Futteranalyse anfragen</h2>
-                <p>Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir.</p>
+                <h2>Gesunder & Vitaler Hund.</h2>
             </div>
             <form class="contact-form" action="#" method="post">
                 <div class="form-group">
@@ -1157,12 +1127,8 @@
                     <label for="phone">Telefonnummer *</label>
                     <input type="tel" id="phone" name="phone" required placeholder="Für den Rückruf">
                 </div>
-                <button type="submit" class="form-submit">Unverbindliche Futterberatung starten</button>
-                <p class="form-note">Dauert nur 2 Minuten · Kostenfrei & Unverbindlich · Kein Kaufzwang</p>
-                <div class="guarantee-badge">
-                    <span class="guarantee-icon">✓</span>
-                    <span>Nicht zufrieden? Kostenfreie Proben ohne Risiko testen.</span>
-                </div>
+                <button type="submit" class="form-submit">Unverbindlich anfragen</button>
+                <a href="#" class="calendly-link">Oder direkt einen Termin buchen</a>
             </form>
         </div>
     </section>
@@ -1252,7 +1218,7 @@
                 <ul>
                     <li><a href="#beschwerden">Häufige Beschwerden</a></li>
                     <li><a href="#erfahrungen">Erfahrungen</a></li>
-                    <li><a href="#beratung">Unsere Unterstützung</a></li>
+                    <li><a href="#beratung">Meine Unterstützung</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
@@ -1285,7 +1251,7 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <a href="#kontakt">Unverbindliche Futterberatung starten</a>
+        <a href="#kontakt">Kostenloser Futtercheck</a>
     </div>
 
     <script>
