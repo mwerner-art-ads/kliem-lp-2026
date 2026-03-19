@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danke für deine Anfrage | Hundefutter Vital</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --alge: #3A3D0C;
+            --kalk: #EAE2D5;
+            --chlorophyll: #E7F191;
+            --chlorophyll-hell: #EEF5B2;
+            --kristall-rot: #FF9888;
+            --weiss: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--alge) 0%, #4a4d1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            background: var(--weiss);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--chlorophyll);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            color: var(--alge);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .steps {
+            background: var(--kalk);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .steps h2 {
+            color: var(--alge);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: var(--kristall-rot);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--alge);
+        }
+
+        .step-text {
+            color: var(--text-dark);
+        }
+
+        .step-text strong {
+            color: var(--alge);
+        }
+
+        .calendly-section {
+            background: var(--chlorophyll-hell);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendly-section p {
+            margin-bottom: 1rem;
+            color: var(--alge);
+            font-weight: 500;
+        }
+
+        .calendly-btn {
+            display: inline-block;
+            background: var(--kristall-rot);
+            color: var(--alge);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .calendly-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 136, 0.4);
+        }
+
+        .testimonial {
+            border-top: 1px solid var(--kalk);
+            padding-top: 2rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--alge);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--alge);
+        }
+
+        /* Conversion Tracking Pixel Placeholder */
+        .tracking {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">✓</div>
+
+        <h1>Perfekt, deine Anfrage ist da!</h1>
+        <p class="subtitle">Wir freuen uns darauf, dich und deinen Hund kennenzulernen.</p>
+
+        <div class="steps">
+            <h2>Was passiert jetzt?</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text"><strong>Wir prüfen deine Angaben</strong> und bereiten uns auf dein Gespräch vor.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text"><strong>Innerhalb von 24 Stunden</strong> erhältst du einen Anruf oder eine E-Mail.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text"><strong>Gemeinsam findet ihr</strong> das perfekte Futter für deinen Vierbeiner.</div>
+            </div>
+        </div>
+
+        <div class="calendly-section">
+            <p>Keine Zeit zu warten? Buche direkt einen Termin:</p>
+            <a href="https://calendly.com/hundefutter-vital" class="calendly-btn" target="_blank">Jetzt Termin buchen →</a>
+        </div>
+
+        <div class="testimonial">
+            "Nach nur 3 Wochen mit dem neuen Futter hat sich die Verdauung meines Labrador komplett normalisiert. Kein Durchfall mehr!"
+            <div class="testimonial-author">— Sandra K., München</div>
+        </div>
+
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+    </div>
+
+    <!-- Conversion Tracking -->
+    <div class="tracking">
+        <!-- Google Ads Conversion Tracking -->
+        <!-- gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXX'}); -->
+
+        <!-- GA4 Event -->
+        <script>
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead', {
+                    'event_category': 'form',
+                    'event_label': 'Futterberatung Anfrage'
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>
