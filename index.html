@@ -1107,72 +1107,66 @@
             <div class="section-header">
                 <h2>Gesunder & Vitaler Hund.</h2>
             </div>
-            <!-- Erst-Frage: Bestandskunde? -->
-            <div id="customer-check" class="contact-form" style="text-align: center;">
-                <p style="font-size: 1.1rem; color: var(--alge); margin-bottom: 1.5rem; font-weight: 500;">
-                    Bist du bereits REiCO Kunde?
+            <!-- Meldung für Bestandskunden (hidden by default) -->
+            <div id="existing-customer-notice" style="display: none; background: var(--chlorophyll-hell); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; text-align: center;">
+                <h3 style="color: var(--alge); margin-bottom: 1rem;">Du hast bereits einen REiCO Berater?</h3>
+                <p style="color: var(--text-dark); margin-bottom: 1rem;">
+                    Wende dich bitte direkt an deinen bestehenden Berater – er kennt dich und deinen Hund am besten!
                 </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button type="button" onclick="showExistingCustomer()" style="padding: 1rem 2rem; border: 2px solid var(--kalk); background: var(--weiss); border-radius: 10px; font-family: inherit; font-size: 1rem; cursor: pointer; transition: all 0.3s;">
-                        Ja, ich bin bereits Kunde
-                    </button>
-                    <button type="button" onclick="showNewCustomerForm()" style="padding: 1rem 2rem; border: 2px solid var(--chlorophyll); background: var(--chlorophyll-hell); border-radius: 10px; font-family: inherit; font-size: 1rem; cursor: pointer; font-weight: 600; transition: all 0.3s;">
-                        Nein, ich bin Neukunde
-                    </button>
-                </div>
-            </div>
-
-            <!-- Meldung für Bestandskunden -->
-            <div id="existing-customer" class="contact-form" style="display: none; text-align: center;">
-                <div style="background: var(--chlorophyll-hell); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--alge); margin-bottom: 1rem;">Du hast bereits einen REiCO Berater?</h3>
-                    <p style="color: var(--text-dark); margin-bottom: 1rem;">
-                        Wende dich bitte direkt an deinen bestehenden Berater – er kennt dich und deinen Hund am besten!
-                    </p>
-                    <p style="color: var(--text-light); font-size: 0.9rem;">
-                        Falls du deinen Berater nicht mehr erreichen kannst, hilft dir der REiCO Kundenservice weiter:
-                    </p>
-                </div>
-                <a href="tel:+4980abortruf" style="display: inline-block; background: var(--kristall-rot); color: var(--alge); padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; margin-bottom: 1rem;">
-                    REiCO Kundenservice anrufen
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Falls du deinen Berater nicht mehr erreichen kannst:
+                </p>
+                <a href="tel:+498007324626" style="display: inline-block; background: var(--kristall-rot); color: var(--alge); padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600;">
+                    REiCO Kundenservice: 0800-REICO00
                 </a>
-                <p style="margin-top: 1rem;">
-                    <a href="#" onclick="showCustomerCheck(); return false;" style="color: var(--text-light); font-size: 0.9rem;">← Zurück</a>
-                </p>
             </div>
 
-            <!-- Formular für Neukunden -->
-            <form class="contact-form" action="https://form-handler.mw-sea.workers.dev" method="POST" id="contact-form" style="display: none;">
+            <form class="contact-form" action="https://form-handler.mw-sea.workers.dev" method="POST" id="contact-form">
                 <input type="hidden" name="_next" value="danke.html">
                 <input type="hidden" name="_source" value="Hundefutter Vital Landing Page">
-                <input type="hidden" name="kunde_typ" value="Neukunde">
+
+                <!-- Neukunde Frage als erstes Pflichtfeld -->
                 <div class="form-group">
-                    <label for="name">Dein Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Wie heißt du?">
+                    <label style="font-weight: 600; color: var(--alge);">Bist du bereits REiCO Kunde? *</label>
+                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.75rem 1.25rem; border: 2px solid var(--kalk); border-radius: 10px; transition: all 0.3s;" id="label-neukunde">
+                            <input type="radio" name="kunde_status" value="neukunde" required onchange="handleCustomerStatus(this)" style="width: 18px; height: 18px;">
+                            <span>Nein, Neukunde</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.75rem 1.25rem; border: 2px solid var(--kalk); border-radius: 10px; transition: all 0.3s;" id="label-bestandskunde">
+                            <input type="radio" name="kunde_status" value="bestandskunde" required onchange="handleCustomerStatus(this)" style="width: 18px; height: 18px;">
+                            <span>Ja, bereits Kunde</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-Mail Adresse *</label>
-                    <input type="email" id="email" name="email" required placeholder="deine@email.de">
+
+                <!-- Restliche Felder (werden bei Bestandskunde deaktiviert) -->
+                <div id="form-fields">
+                    <div class="form-group">
+                        <label for="name">Dein Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Wie heißt du?">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail Adresse *</label>
+                        <input type="email" id="email" name="email" required placeholder="deine@email.de">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefonnummer *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Für den Rückruf">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_pref">Wie möchtest du kontaktiert werden? *</label>
+                        <select id="contact_pref" name="contact_pref" required style="width: 100%; padding: 1rem; border: 2px solid var(--kalk); border-radius: 10px; font-family: inherit; font-size: 1rem;">
+                            <option value="">Bitte wählen...</option>
+                            <option value="telefon">Telefonisch</option>
+                            <option value="email">Per E-Mail</option>
+                            <option value="egal">Beides ist okay</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit" id="submit-btn">Kostenlose Analyse anfordern →</button>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">✓ Antwort innerhalb von 24 Stunden</p>
+                    <a href="https://calendly.com/hundefutter-vital" class="calendly-link">Oder direkt einen Termin buchen</a>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Telefonnummer *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Für den Rückruf">
-                </div>
-                <div class="form-group">
-                    <label for="contact_pref">Wie möchtest du kontaktiert werden? *</label>
-                    <select id="contact_pref" name="contact_pref" required style="width: 100%; padding: 1rem; border: 2px solid var(--kalk); border-radius: 10px; font-family: inherit; font-size: 1rem;">
-                        <option value="">Bitte wählen...</option>
-                        <option value="telefon">Telefonisch</option>
-                        <option value="email">Per E-Mail</option>
-                        <option value="egal">Beides ist okay</option>
-                    </select>
-                </div>
-                <button type="submit" class="form-submit">Kostenlose Analyse anfordern →</button>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">✓ Antwort innerhalb von 24 Stunden</p>
-                <a href="https://calendly.com/hundefutter-vital" class="calendly-link">Oder direkt einen Termin buchen</a>
-                <p style="text-align: center; margin-top: 1rem;">
-                    <a href="#" onclick="showCustomerCheck(); return false;" style="color: var(--text-light); font-size: 0.9rem;">← Zurück</a>
-                </p>
             </form>
         </div>
     </section>
@@ -1315,23 +1309,30 @@
             });
         });
 
-        // Customer Check Logic
-        function showCustomerCheck() {
-            document.getElementById('customer-check').style.display = 'block';
-            document.getElementById('existing-customer').style.display = 'none';
-            document.getElementById('contact-form').style.display = 'none';
-        }
+        // Customer Status Handler
+        function handleCustomerStatus(radio) {
+            const notice = document.getElementById('existing-customer-notice');
+            const formFields = document.getElementById('form-fields');
+            const labelNeukunde = document.getElementById('label-neukunde');
+            const labelBestandskunde = document.getElementById('label-bestandskunde');
 
-        function showExistingCustomer() {
-            document.getElementById('customer-check').style.display = 'none';
-            document.getElementById('existing-customer').style.display = 'block';
-            document.getElementById('contact-form').style.display = 'none';
-        }
-
-        function showNewCustomerForm() {
-            document.getElementById('customer-check').style.display = 'none';
-            document.getElementById('existing-customer').style.display = 'none';
-            document.getElementById('contact-form').style.display = 'block';
+            if (radio.value === 'bestandskunde') {
+                // Bestandskunde: Hinweis zeigen, Formular ausblenden
+                notice.style.display = 'block';
+                formFields.style.display = 'none';
+                labelBestandskunde.style.borderColor = 'var(--kristall-rot)';
+                labelBestandskunde.style.backgroundColor = 'rgba(255,152,136,0.1)';
+                labelNeukunde.style.borderColor = 'var(--kalk)';
+                labelNeukunde.style.backgroundColor = 'transparent';
+            } else {
+                // Neukunde: Formular zeigen, Hinweis ausblenden
+                notice.style.display = 'none';
+                formFields.style.display = 'block';
+                labelNeukunde.style.borderColor = 'var(--chlorophyll)';
+                labelNeukunde.style.backgroundColor = 'var(--chlorophyll-hell)';
+                labelBestandskunde.style.borderColor = 'var(--kalk)';
+                labelBestandskunde.style.backgroundColor = 'transparent';
+            }
         }
     </script>
 </body>
